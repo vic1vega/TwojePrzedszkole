@@ -20,13 +20,15 @@ namespace TwojePrzedszkole.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDTO userForRegisterDTO)
         {
+
             userForRegisterDTO.Username = userForRegisterDTO.Username.ToLower();
             if (await _repository.UserExist(userForRegisterDTO.Username))
             {
                 return BadRequest("Użytkownik o takiej nazwie już istnieje.");
             }
 
-            var userToCreate = new User{
+            var userToCreate = new User
+            {
                 Username = userForRegisterDTO.Username
             };
 
