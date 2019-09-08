@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
     model: any = {};
 
     constructor(
-      public router: Router
+        private http: HttpClient,
+        public router: Router
     ) {}
 
     ngOnInit() {}
@@ -22,8 +24,4 @@ export class LoginComponent implements OnInit {
         console.log(this.model);
     }
 
-    onLoggedin() {
-        this.login();
-        localStorage.setItem('isLoggedin', 'true');
-    }
 }

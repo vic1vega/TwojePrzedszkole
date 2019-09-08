@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
     }
 
     onLoggedin() {
-        this.login();
         localStorage.setItem('isLoggedin', 'true');
     }
 }

@@ -18,8 +18,5 @@ import { AuthGuard } from './shared';
       LanguageTranslationModule,
       AppRoutingModule
    ],
-   declarations: [AppComponent],
-   providers: [AuthGuard],
-   bootstrap: [AppComponent]
-})
-export class AppModule {}
+   declarations: [
+      AppComponent,

@@ -9,8 +9,8 @@ import { routerTransition } from '../router.animations';
     animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-
-    model: any = {};
+    
+    model: any ={};
 
     constructor(
       public router: Router
@@ -18,12 +18,11 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {}
 
-    login() {
+
+    login(){
         console.log(this.model);
     }
-
     onLoggedin() {
-        this.login();
         localStorage.setItem('isLoggedin', 'true');
     }
 }
