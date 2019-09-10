@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AlertifyService } from 'src/app/_services/alertify.service';
+declare let alertify: any;
 
 @Component({
     selector: 'app-header',
@@ -11,7 +11,7 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;
 
-    constructor(private translate: TranslateService, public router: Router, private alertify: AlertifyService) {
+    constructor(private translate: TranslateService, public router: Router) {
 
         this.router.events.subscribe(val => {
             if (
@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit {
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
         localStorage.removeItem('token');
-        this.alertify.notify('Nastąpiło wylogowanie.');
+        alertify.succes('Nastąpiło wylogowanie.');
     }
 
     changeLang(language: string) {

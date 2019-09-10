@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 import { AuthService } from '../_services/auth.service';
-import { AlertifyService } from '../_services/alertify.service';
+declare let alertify: any;
 
 @Component({
     selector: 'app-login',
@@ -16,19 +16,18 @@ export class LoginComponent implements OnInit {
 
     constructor(
         public router: Router,
-        private authService: AuthService,
-        private alertify: AlertifyService
+        private authService: AuthService
     ) { }
 
     ngOnInit() { }
 
     login() {
         this.authService.login(this.model).subscribe(next => {
-            this.alertify.success('Udało się zalogować.');
+            alertify.succes('Udało się zalogować.');
             localStorage.setItem('isLoggedin', 'true');
             this.router.navigate(['/dashboard']);
         }, error => {
-            this.alertify.error('Logowanie nieudane.');
+            alertify.error('Logowanie nieudane.');
         });
 
     }
