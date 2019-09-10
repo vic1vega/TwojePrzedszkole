@@ -21,11 +21,11 @@ export class SignupComponent implements OnInit {
     ngOnInit() {}
 
     register() {
-        this.authService.register(this.model).subscribe(() => {
-            console.log('Rejestracja powiodła się.');
-        }, error => {
-            console.log(error);
-        });
+        // this.authService.register(this.model).subscribe(() => {
+        //     console.log('Rejestracja powiodła się.');
+        // }, error => {
+        //     console.log(error);
+        // });
+        console.log(this.model);
     }
 }
-

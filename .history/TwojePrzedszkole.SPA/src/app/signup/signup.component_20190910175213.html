@@ -24,7 +24,7 @@
                         <input type="password" name="confirmPassword" required class="form-control input-underline input-lg" placeholder="{{ 'Confirm Password' | translate }}">
                     </div>
                 </div>
-                <button class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="register()">{{ 'Register' | translate }}</button>
+                <button class="btn rounded-btn" (click)="register()" [routerLink]="['/dashboard']">{{ 'Register' | translate }}</button>
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/login']">{{ 'Log in' | translate }}</a>
             </form>
