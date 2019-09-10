@@ -23,16 +23,18 @@ export class LoginComponent implements OnInit {
     login() {
         this.authService.login(this.model).subscribe(next => {
             console.log('Udało się zalogować.');
-            localStorage.setItem('isLoggedin', 'true');
-            this.router.navigate(['/dashboard']);
         }, error => {
             console.log('Logowanie nieudane.');
         });
+
+        // localStorage.setItem('isLoggedin', 'true');
+        this.router.navigate(['/dashboard']);
 
     }
 
     onLogin() {
         // this.login();
+
         // localStorage.setItem('isLoggedin', 'true');
         // // const onLogin = localStorage.getItem('isLogggedin');
         // this.router.navigate(['/dashboard']);

@@ -14,28 +14,26 @@ export class LoginComponent implements OnInit {
     model: any = {};
 
     constructor(
-        public router: Router,
-        private authService: AuthService
-    ) { }
+      public router: Router,
+      private authService: AuthService
+    ) {}
 
-    ngOnInit() { }
+    ngOnInit() {}
 
     login() {
         this.authService.login(this.model).subscribe(next => {
             console.log('Udało się zalogować.');
-            localStorage.setItem('isLoggedin', 'true');
-            this.router.navigate(['/dashboard']);
+            const token = localStorage.getItem('token');
         }, error => {
             console.log('Logowanie nieudane.');
         });
-
     }
 
-    onLogin() {
-        // this.login();
-        // localStorage.setItem('isLoggedin', 'true');
-        // // const onLogin = localStorage.getItem('isLogggedin');
-        // this.router.navigate(['/dashboard']);
+    onLoggedin() {
+        this.login();
 
+        // if (token) {
+        //     localStorage.setItem('isLoggedin', 'true');
+        // }
     }
 }

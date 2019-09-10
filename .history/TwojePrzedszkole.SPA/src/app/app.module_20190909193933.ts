@@ -20,7 +20,7 @@ import { AuthService } from './_services/auth.service';
       AppRoutingModule
    ],
    declarations: [AppComponent],
-   providers: [AuthService, AuthGuard], // do usuniecia jeden provider
+   providers: [AuthService],
    bootstrap: [AppComponent]
 })
 export class AppModule {}
