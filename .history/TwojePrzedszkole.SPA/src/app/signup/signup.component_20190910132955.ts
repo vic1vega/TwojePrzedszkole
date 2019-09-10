@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
-import { AuthService } from '../_services/auth.service';
-
+import {  } from "module";
 @Component({
     selector: 'app-signup',
     templateUrl: './signup.component.html',
@@ -13,10 +11,7 @@ export class SignupComponent implements OnInit {
 
     model: any = {};
 
-    constructor(
-        public router: Router,
-        private authService: AuthService
-    ) {}
+    constructor() {}
 
     ngOnInit() {}
 

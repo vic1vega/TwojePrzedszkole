@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SignupRoutingModule } from './signup-routing.module';
@@ -11,7 +11,7 @@ import { SignupComponent } from './signup.component';
     CommonModule,
     TranslateModule,
     SignupRoutingModule,
-    FormsModule
+    FormGroup
   ],
   declarations: [SignupComponent]
 })

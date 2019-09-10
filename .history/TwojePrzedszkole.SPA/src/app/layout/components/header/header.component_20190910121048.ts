@@ -45,7 +45,7 @@ export class HeaderComponent implements OnInit {
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
         localStorage.removeItem('token');
-        console.log('Nastąpiło wylogowanie.');
+        console.log('Nastąpiło wylogowanie');
     }
 
     changeLang(language: string) {
