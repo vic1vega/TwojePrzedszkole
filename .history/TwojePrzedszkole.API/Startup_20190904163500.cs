@@ -40,8 +40,6 @@ namespace TwojePrzedszkole.API
                         };
                     });
             services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddScoped<IGenericRepository, GenericRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
